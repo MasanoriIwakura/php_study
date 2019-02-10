@@ -1,0 +1,7 @@
+# MySQL
+mysql/lib/*
+
+# PHP
+
+# phpMyAdmin
+/phpmyadmin/sessions/*
