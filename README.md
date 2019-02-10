@@ -7,23 +7,23 @@
 |OS|macOS Mojava 10.14.3|
 |Docker|Docker for Mac 18.06.1-ce|
 |Docker Compose|1.22.0|
-|PHP|7.2.7-apache #Apacheと連携されているコンテナ|
+|PHP|7.2.7-apache (Apacheと連携されているコンテナ)|
 |MySQL|8|
 |phpMyAdmin|4.7|
 
-## プロジェクト構成
+## プロジェクト構成
 
 ### [PHP]
 Dockerコンテナの80番ポートと、ホストOSの80番ポートを紐付け。  
-<http://localhost> で`php/html/index.php`の内容を表示する。
+<http://localhost> で`php/html/index.php`の内容を表示する。
 
 ### [MySQL]
 Version8からデフォルトの認証方式が`caching_sha2_password`となっているため、`mysql_native_password`に変更する。  
-この設定を行わないとMySQLに接続出来ない。
+この設定を行わないとMySQLに接続出来ない。
 
 ## 使用手順
 
-### [前提条件]
+### [前提条件]
 * Dockerがインストールされていること、起動されていること
 * Docker Composeがインストールされていること
 
@@ -40,7 +40,7 @@ $ brew install docker-compose
 # Clone
 $ git clone https://github.com/MasanoriIwakura/php_study.git
 
-# フォルダ移動
+# フォルダ移動
 $ cd php_study
 
 # コンテナ実行
