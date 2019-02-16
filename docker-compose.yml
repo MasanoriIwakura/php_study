@@ -2,21 +2,25 @@ version: '3'
 
 services:
   php:
-    image: php:7.2.7-apache
+    build: ./php/.
     ports:
       - '80:80'
     volumes:
       - ./php/html:/var/www/html
-    depends_on:
+    links:
       - mysql
 
   mysql:
     image: mysql:8
     environment:
       - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=docker
+      - MYSQL_PASSWORD=docker
     volumes:
       - ./mysql/conf:/etc/mysql/conf.d/
       - ./mysql/lib:/var/lib/mysql
+      - ./mysql/sql:/docker-entrypoint-initdb.d
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7
