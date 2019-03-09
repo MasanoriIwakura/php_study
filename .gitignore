@@ -2,6 +2,7 @@
 mysql/lib/*
 
 # PHP
+php/log/*
 
 # phpMyAdmin
-/phpmyadmin/sessions/*
+phpmyadmin/sessions/*

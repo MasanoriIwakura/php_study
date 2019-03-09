@@ -2,11 +2,13 @@ version: '3'
 
 services:
   php:
-    build: ./php/.
+    build: ./php
     ports:
       - '80:80'
     volumes:
       - ./php/html:/var/www/html
+      - ./php/conf/php.ini:/usr/local/etc/php/php.ini
+      - ./php/log/xdebug:/var/log/xdebug
     links:
       - mysql
 
